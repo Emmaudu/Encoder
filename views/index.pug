@@ -1,0 +1,26 @@
+extends layout
+block content
+    main
+        .row.justify-content-center
+            .col-lg-6.container3.text-white.p-5
+                .container4
+                    h3.text-center
+                        | Pay to Book
+                        span.spn 
+                        | Mentorship Session For the Week
+                .container.pt-3
+                    form(name='myForm', action='/paystack/pay', method='POST')
+                        input#name(type='text', name='full_name', placeholder='Full Nname')
+                        hr
+                        input#email(type='email', name='email', placeholder='Email')
+                        hr
+                        select(name='amount')
+                            option Select Amount
+                            option(value='24') 24
+                            option(value='50') 50
+                            option(value='20') 20
+                            option(value='25') 25
+                            option(value='30') 30
+                            option(value='10') 10
+                        .bttn.pt-2
+                            button(type='submit') Pay For Mentorship
